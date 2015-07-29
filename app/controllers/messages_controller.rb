@@ -12,12 +12,6 @@ class MessagesController < ApplicationController
   def show
   end
 
-  # GET /messages/new
-  def new
-    @message = Message.new
-    validates_presence_of :message
-  end
-
   # GET /messages/1/edit
   def edit
   end
