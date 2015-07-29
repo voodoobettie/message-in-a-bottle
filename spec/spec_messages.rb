@@ -2,20 +2,19 @@ RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     #expectations.
 
-# messages should be accessible
-#expectations.message_index_accessible = true
-#obj.should exist
-
-
-# message creation should be successful
-#expectations.message_creation_successful = true
-
-
-# message creation empty text should fail
+# message creation empty text should fail | starter / degenerate case with bad inputs
 #expectations.message_creation_empty_text_field = false
 #obj.should be_true
 #obj.should raise_exception(error)
 
+
+# messages should be accessible / positive case | next test
+#expectations.message_index_accessible = true
+#obj.should exist
+
+
+# message creation should be successful / positive case | story test
+#expectations.message_creation_successful = true
 
 
 require_relative '../messages'
@@ -25,25 +24,15 @@ describe "Messages" do
  
     before :all do
         messages = [
-            Message.new("Fred", "Do you need anything from the store", "888-9876"),
-            Message.new("Jeffrey", "Lunch is ready", "555-6789"),
-            Message.new("Steve", "There is a bird inside the house", "123-4567"),
-            Message.new("Laura", "The cat will get it", "555-5555"),
-            Message.new("Elsa", "He's too short to reach", "987-6543")
+            Message.new(:name => 'Fred', :content => 'Do you need anything from the store', phone: => '888-9876'),
+            Message.new(:name => 'Jeffrey', :content => 'Lunch is ready', phone: => '555-6789'),
+            Message.new(:name => 'Steve', :content => 'There is a bird inside the house', phone: => '123-4567'),
+            Message.new(:name => 'Laura', :content => 'The cat will get it', phone: => '555-5555'),
+            Message.new(:name => 'Elsa', :content => 'Can the cat reach?', phone: => '987-6543')
         ]
     end
  
 end
-
-class Message
-    attr_accessor :name, :content, :phone
-        def initialize name, content, phone
-            @name = name
-            @content = content
-            @phone = phone
-        end
-end
-
 
 # describe message index accessible
 describe "#creation" do
