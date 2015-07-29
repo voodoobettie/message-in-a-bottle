@@ -1,11 +1,15 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: [:show, :edit, :update, :destroy, :new ]
 
   # GET /messages
   # GET /messages.json
   def index
     @messages = Message.all
   end
+
+  #def message_new
+   # @message = Message.new
+  #end
 
   # GET /messages/1
   # GET /messages/1.json
@@ -58,6 +62,10 @@ class MessagesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def message_new
+      @message = Message.new
+    end
+
     def set_message
       @message = Message.find(params[:id])
     end

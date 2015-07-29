@@ -42,7 +42,7 @@ describe "#creation" do
 
 
 # describe messages  
-describe "#new" do
+describe "Message" do
   it "creates a new message" do
     @message.should be_an_instance_of Message 
   end
