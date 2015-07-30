@@ -7,9 +7,9 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
-  #def message_new
-   # @message = Message.new
-  #end
+  def message_new
+    @message = Message.new
+  end
 
   # GET /messages/1
   # GET /messages/1.json
