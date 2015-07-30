@@ -62,9 +62,6 @@ class MessagesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def message_new
-      @message = Message.new
-    end
 
     def set_message
       @message = Message.find(params[:id])
