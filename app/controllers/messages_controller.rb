@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy, :new ]
+  before_action :set_message, only: [:show, :edit, :update, :destroy ]
 
   # GET /messages
   # GET /messages.json
@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
-  def message_new
+  def new
     @message = Message.new
   end
 
