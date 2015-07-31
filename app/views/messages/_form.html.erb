@@ -12,6 +12,8 @@
   <% end %>
 
   <div class="actions">
+    <%= form_for :message do |f| %>
+    Message: <%= f.text_field :message %><br>
     <%= f.submit %>
   </div>
 <% end %>
